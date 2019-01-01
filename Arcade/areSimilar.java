@@ -35,23 +35,36 @@ public class areSimilar {
         System.out.println(ret ? true : false);
     }
     
-    public static boolean areSimilar(int [] a , int [] b)
+    public static boolean areSimilar(int[] a, int[] b) {
+
+    ArrayList<Integer> arrList = new ArrayList<>();
+    for(int i = 0 ; i < a.length ; i++)
     {
-        int count = 0;
-        
-        for(int i = 0 ; i < a.length ; i++)
+        if(a[i] != b[i])
         {
-            if(a[i] != b[i])
-            {
-                count++;
-            }
+            arrList.add(i); 
         }
-        
-        if(count > 2)
-        {
-            return false;
-        }
-        
+    }
+    
+    if(arrList.size() == 0)
+    {
         return true;
     }
+    
+    if(arrList.size() != 2)
+    {
+        return false;
+    }
+    
+    int id1 = arrList.get(0);
+    int id2 = arrList.get(1);
+    
+    if(a[id1] == b[id2] && a[id2] == b[id1])
+    {
+        return true;
+    }
+    
+    return false;
 }
+
+           
