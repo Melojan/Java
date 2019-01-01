@@ -45,18 +45,15 @@ public class AllLongestStrings {
                 longestword = longestword + "," + strArray[j];
                 continue;
             }
-        }
         
-        for(int i = 1 ; i < strArray.length ; i++)
-        {
-                if(strArray[i].length() > longestChar)
-                {
-                    longestChar = strArray[i].length();
-                    longestword = strArray[i];
-                    continue;
-                }
+            if(strArray[i].length() > longestChar)
+            {
+                longestChar = strArray[i].length();
+                longestword = strArray[i];
+                continue;
+            }
                 
-        }
+         }
         
         return longestword.split(",");
                   
